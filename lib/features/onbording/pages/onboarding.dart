@@ -48,7 +48,13 @@ class _OnBoardingState extends State<OnBoarding> {
                   Row(
                     children: [
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          pageController.nextPage(
+                              duration: const Duration(
+                                milliseconds: 600,
+                              ),
+                              curve: Curves.ease);
+                        },
                         child: const Icon(
                           Ionicons.chevron_forward_circle,
                           size: 30,
