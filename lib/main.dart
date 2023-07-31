@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'features/todo/pages/homepage.dart';
+import 'package:todo_with_firebase/common/utils/constants.dart';
+import 'package:todo_with_firebase/features/onbording/pages/onboarding.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
@@ -13,16 +14,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
         designSize: const Size(375, 825),
+        minTextAdapt: true,
         useInheritedMediaQuery: true,
         builder: (context, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: "Todo-Firebase",
             theme: ThemeData(
+              scaffoldBackgroundColor: AppConstants.kBkDark,
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: const HomePage(),
+            themeMode: ThemeMode.dark,
+            home: const OnBoarding(),
           );
         });
   }

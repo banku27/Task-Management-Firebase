@@ -16,5 +16,5 @@ class AppConstants {
   static const Color kGreyBk = Color(0xff202c33);
 
   static double kWidth = 375.w;
-  static double kheight = 825.h;
+  static double kHeight = 825.h;
 }
