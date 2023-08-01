@@ -40,6 +40,7 @@ dependencies:
   ionicons: ^0.2.2
   smooth_page_indicator: ^1.1.0
   flutter_riverpod: ^2.3.6
+  country_picker: ^2.0.20
 
 dev_dependencies:
   flutter_test:
