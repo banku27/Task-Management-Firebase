@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_with_firebase/common/utils/constants.dart';
-import 'package:todo_with_firebase/features/onbording/pages/onboarding.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:todo_with_firebase/features/todo/pages/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
               useMaterial3: true,
             ),
             themeMode: ThemeMode.dark,
-            home: const OnBoarding(),
+            home: const HomePage(),
           );
         });
   }

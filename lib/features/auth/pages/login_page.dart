@@ -9,6 +9,8 @@ import 'package:todo_with_firebase/common/widgets/custom_text_field.dart';
 import 'package:todo_with_firebase/common/widgets/height_spacer.dart';
 import 'package:todo_with_firebase/common/widgets/reusable_text.dart';
 
+import 'otp_page.dart';
+
 class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
 
@@ -84,13 +86,22 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                       ),
                     )),
               ),
-              const HeightSpacer(size: 20),
-              CustomOutlineButton(
-                width: AppConstants.kWidth * 0.9,
-                height: AppConstants.kHeight * 0.07,
-                text: 'Send Code',
-                color: AppConstants.kBkDark,
-                color2: AppConstants.kLight,
+              const HeightSpacer(size: 10),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: CustomOutlineButton(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const OtpPage()));
+                  },
+                  width: AppConstants.kWidth * 0.9,
+                  height: AppConstants.kHeight * 0.07,
+                  text: 'Send Code',
+                  color: AppConstants.kBkDark,
+                  color2: AppConstants.kLight,
+                ),
               ),
             ],
           ),
