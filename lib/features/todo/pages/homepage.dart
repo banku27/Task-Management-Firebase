@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_with_firebase/common/utils/constants.dart';
 import 'package:todo_with_firebase/common/widgets/app_style.dart';
 import 'package:todo_with_firebase/common/widgets/custom_text_field.dart';
+import 'package:todo_with_firebase/common/widgets/expansion_tile.dart';
 import 'package:todo_with_firebase/common/widgets/height_spacer.dart';
 import 'package:todo_with_firebase/common/widgets/reusable_text.dart';
 import 'package:todo_with_firebase/common/widgets/width_spacer.dart';
@@ -172,13 +173,31 @@ class _HomePageState extends ConsumerState<HomePage>
                   borderRadius: BorderRadius.all(
                     Radius.circular(AppConstants.kRadius),
                   ),
-                  child: TabBarView(controller: tabController, children: [
-                    Container(
-                      color: AppConstants.kBkLight,
-                      height: AppConstants.kHeight * 0.3,
-                    ),
-                  ]),
+                  child: TabBarView(
+                    controller: tabController,
+                    children: [
+                      Container(
+                        color: AppConstants.kBkLight,
+                        height: AppConstants.kHeight * 0.3,
+                      ),
+                    ],
+                  ),
                 ),
+              ),
+              const HeightSpacer(size: 20),
+              const ExpandsionTile(
+                text: "Tomorrow's Task",
+                text2: "Tommorrow's tasks are shown here",
+                children: [],
+              ),
+              const HeightSpacer(size: 20),
+              ExpandsionTile(
+                text: DateTime.now()
+                    .add(const Duration(days: 2))
+                    .toString()
+                    .substring(5, 10),
+                text2: "Day after tomorrow tasks",
+                children: const [],
               )
             ],
           ),
