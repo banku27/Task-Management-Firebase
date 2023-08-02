@@ -164,6 +164,22 @@ class _HomePageState extends ConsumerState<HomePage>
                   ],
                 ),
               ),
+              const HeightSpacer(size: 20),
+              SizedBox(
+                height: AppConstants.kHeight * 0.3,
+                width: AppConstants.kWidth,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(AppConstants.kRadius),
+                  ),
+                  child: TabBarView(controller: tabController, children: [
+                    Container(
+                      color: AppConstants.kBkLight,
+                      height: AppConstants.kHeight * 0.3,
+                    ),
+                  ]),
+                ),
+              )
             ],
           ),
         ),
