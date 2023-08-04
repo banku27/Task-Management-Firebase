@@ -8,6 +8,7 @@ import 'package:todo_with_firebase/common/widgets/expansion_tile.dart';
 import 'package:todo_with_firebase/common/widgets/height_spacer.dart';
 import 'package:todo_with_firebase/common/widgets/reusable_text.dart';
 import 'package:todo_with_firebase/common/widgets/width_spacer.dart';
+import 'package:todo_with_firebase/features/todo/widgets/todo_tile.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -179,6 +180,14 @@ class _HomePageState extends ConsumerState<HomePage>
                       Container(
                         color: AppConstants.kBkLight,
                         height: AppConstants.kHeight * 0.3,
+                        child: ListView(
+                          children: const [
+                            TodoTile(
+                              start: "3:00",
+                              end: "6:00",
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
