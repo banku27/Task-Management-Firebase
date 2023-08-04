@@ -181,10 +181,12 @@ class _HomePageState extends ConsumerState<HomePage>
                         color: AppConstants.kBkLight,
                         height: AppConstants.kHeight * 0.3,
                         child: ListView(
-                          children: const [
+                          children: [
                             TodoTile(
                               start: "3:00",
                               end: "6:00",
+                              switcher:
+                                  Switch(value: true, onChanged: (value) {}),
                             ),
                           ],
                         ),
@@ -207,7 +209,8 @@ class _HomePageState extends ConsumerState<HomePage>
                     .substring(5, 10),
                 text2: "Day after tomorrow tasks",
                 children: const [],
-              )
+              ),
+              const HeightSpacer(size: 20),
             ],
           ),
         ),
