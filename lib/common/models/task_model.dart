@@ -1,29 +1,53 @@
-// To parse this JSON data, do
-//
-//     final userModel = userModelFromJson(jsonString);
-
 import 'dart:convert';
 
-UserModel userModelFromJson(String str) => UserModel.fromJson(json.decode(str));
+TaskModel taskModelFromJson(String str) => TaskModel.fromJson(json.decode(str));
 
-String userModelToJson(UserModel data) => json.encode(data.toJson());
+String taskModelToJson(TaskModel data) => json.encode(data.toJson());
 
-class UserModel {
-  final int id;
-  final int isVerified;
+class TaskModel {
+  int? id;
+  String? title;
+  String? desc;
+  int? isCompleted;
+  String? date;
+  String? startTime;
+  String? endTime;
+  int? remind;
+  String? repeat;
 
-  UserModel({
-    required this.id,
-    required this.isVerified,
+  TaskModel({
+    this.id,
+    this.title,
+    this.desc,
+    this.isCompleted,
+    this.date,
+    this.startTime,
+    this.endTime,
+    this.remind,
+    this.repeat,
   });
 
-  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
+  factory TaskModel.fromJson(Map<String, dynamic> json) => TaskModel(
         id: json["id"],
-        isVerified: json["isVerified"],
+        title: json["title"],
+        desc: json["desc"],
+        isCompleted: json["isCompleted"],
+        date: json["date"],
+        startTime: json["startTime"],
+        endTime: json["endTime"],
+        remind: json["remind"],
+        repeat: json["repeat"],
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
-        "isVerified": isVerified,
+        "title": title,
+        "desc": desc,
+        "isCompleted": isCompleted,
+        "date": date,
+        "startTime": startTime,
+        "endTime": endTime,
+        "remind": remind,
+        "repeat": repeat,
       };
 }
